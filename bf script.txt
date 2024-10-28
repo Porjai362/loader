@@ -1,3 +1,8 @@
+--* Your code here *--
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
+--------------------------------------------------------------------------------------------------------------------------------------------
 local HttpService = game:GetService("HttpService")
 local function LPH_CRASH(...) return ... end;
 local function LPH_ENCSTR(...) return ... end;
@@ -5905,11 +5910,8 @@ end
 getgenv().Kusnokix = nil
 print("Whitelist !")
 
---* Your code here *--
-local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
-local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
-local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
---------------------------------------------------------------------------------------------------------------------------------------------
+
+
 local Window = Fluent:CreateWindow({
     Title = "Oxygen Hub |",
     SubTitle = "Blox Fruit Premium Script",
