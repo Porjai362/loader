@@ -2342,40 +2342,9 @@ end
 AntiKick()
 
 
-
-
-
-
-
 --------------------------------------------------------------------------------------------------------------------------------------------
 
 local Delay2 = false
-local leftFrame = game:GetService("CoreGui").TopBarApp.TopBarFrame.LeftFrame
-
-local chatIconSize = leftFrame.ChatIcon.Size
-
-local imageButton = Instance.new("ImageButton")
-imageButton.Size = chatIconSize
-imageButton.Position = UDim2.new(0, chatIconSize.X.Offset + 100, 0.5, 0)
-imageButton.AnchorPoint = Vector2.new(0, 0.5)
-imageButton.Image = "https://img.xdnvz.xyz/uploads/TaylorSwift13/ox2.png"
-imageButton.BackgroundTransparency = 1
-imageButton.ZIndex = 2
-imageButton.Parent = leftFrame.Parent
-
-local uiCorner = Instance.new("UICorner")
-uiCorner.CornerRadius = UDim.new(0, 15)
-uiCorner.Parent = imageButton
-
-imageButton.Activated:Connect(function()
-if Delay2 == false then
-    Delay2 = true
-    game.CoreGui:FindFirstChild("ScreenGui").Enabled = not game.CoreGui:FindFirstChild("ScreenGui").Enabled
-    wait(1)
-    Delay2 = false
-end
-end)
-
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 -- Hehe
@@ -6616,9 +6585,6 @@ end)
 pcall(function()
     game:GetService("Players").LocalPlayer.PlayerGui.Main.Energy.Visible = false
 end)
-for _, element in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Main:GetChildren()) do
-    if element:IsA("ImageButton") then
-        element.Visible = false
     end
 end
 pcall(function()
