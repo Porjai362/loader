@@ -1,8 +1,25 @@
+
 --* Your code here *--
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 --------------------------------------------------------------------------------------------------------------------------------------------
+local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
+
+local url1 = "https://whitelist.xdnvz.xyz/api/key.php?key=" .. G_KEY .. "&hwid=" .. HWID
+local headers1 = {
+    ["Content-Type"] = "application/json"
+}
+
+local response = request({
+    Url = url1,
+    Method = "GET"
+}).Body
+print(response)
+if response == "1" then
+    Notification.new("success", "แจ้งเตือนคีย์", "คียถูกต้อง✅", 3)
+    
+
 local Window = Fluent:CreateWindow({
     Title = "Oxygen Hub |",
     SubTitle = "Blox Fruit Premium Script",
@@ -6593,6 +6610,15 @@ end)
 
 	end
 })
+
+Window:SelectTab("Main")
+elseif response == "2" then
+    Notification.new("error", "แจ้งเตือนคีย์", "คียไม่ถูกต้อง", 3)
+else
+    Notification.new("error", "แจ้งเตือนคีย์", "HWID ซ้ำ กรุณารีเซ็ต HWID", 3)
+end
+
+
 
 
 local ach = loadstring(game:HttpGet("https://raw.githubusercontent.com/SixZensED/Scripts/main/Luxury%20V2/Include/ach.lua"))().create()
